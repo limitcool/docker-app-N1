@@ -1,0 +1,25 @@
+# docker-compose版本
+version: '3'
+# 服务
+services:
+# 服务名
+  hass:
+  # 镜像源地址
+    image: homeassistant/disk-assistant:latest
+    # 容器名
+    container_name: hass
+    # 环境内部设置
+    environment:
+    # 主机名
+      - hostname=hass
+      - name=hass
+      - net=host
+    # 卷
+    volumes:
+    # 系统内文件:Docker内文件
+      - /disk/docker-volume/hass/config:/config
+      - /disk/docker-volume/hass/localtime:/etc/localtime:ro
+    # 系统内端口:docker内端口
+    ports:
+     - "8123:8123"
+    restart: always

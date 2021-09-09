@@ -1,0 +1,12 @@
+version: "3"
+
+services:
+  photoview:
+    image: rclone/rclone:latest
+    restart: always
+    environment:
+      - USER_UID=1000
+      - USER_GID=1000
+    volumes:
+      - /disk/docker-volume/.config/rclone:/config/rclone
+      - /disk/docker-volume/rclone/data:/data:shared

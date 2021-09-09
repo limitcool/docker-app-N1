@@ -1,0 +1,24 @@
+# docker-compose版本
+version: '3'
+# 服务
+services:
+# 服务名
+  portainer:
+  # 镜像源地址
+    image: portainer/portainer-ce
+    # 容器名
+    container_name: portainer
+    # 环境内部设置
+    environment:
+    # 主机名
+      - hostname=portainer
+      - name=portainer
+    # 卷
+    volumes:
+    # 系统内文件:Docker内文件
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /disk/docker-volume/portainer/public:/public
+    # 系统内端口:docker内端口
+    ports:
+     - "9000:9000"
+    restart: always

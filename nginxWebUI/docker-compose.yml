@@ -1,0 +1,13 @@
+version: "3"
+services:
+  nginxWebUi-server:
+    image: cym1102/nginxwebui:2.5.8
+    container_name: nginxwebui
+    volumes:
+      - /disk/docker-volume/nginxWebUI:/disk/nginxWebUI
+    environment:
+      - hostname=nginxwebui
+      - name=nginxwebui
+    ports:
+      - "8080:8080"
+    privileged: true

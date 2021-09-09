@@ -1,0 +1,28 @@
+version: '2'
+services:
+  openvpn:
+    cap_add:
+     - NET_ADMIN
+    image: dockerlemon/lemon_openvpn:v1.0
+    container_name: openvpn
+    ports:
+     - "1194:1194/udp"
+    restart: always
+    depends_on:
+      - "gui"
+    volumes:
+     - /disk/docker-volume/openvpn/openvpn-data/conf:/etc/openvpn
+  gui:
+    image: dockerlemon/lemon_openvpn-web
+    container_name: openvpn-gui
+    ports:
+     - "8081:8080/tcp"
+    restart: always
+    volumes:
+     - /disk/docker-volume/openvpn/openvpn-data/conf:/etc/openvpn
+     - /disk/docker-volume/openvpn/openvpn-data/db:/opt/openvpn-gui/db
+
+
+#
+#username: admin
+#password: b3secure

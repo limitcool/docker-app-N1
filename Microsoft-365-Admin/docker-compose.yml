@@ -1,0 +1,12 @@
+version: "3"
+
+services:
+  microsoft-admin:
+    image: logr/microsoft:latest
+    container_name: microsoft
+    ports:
+      - 8099:8099
+    volumes:
+      - /disk/docker-volume/microsoft/config:/config
+      - /disk/docker-volume/microsoft/db:/root/.graph/db
+    restart: unless-stopped
