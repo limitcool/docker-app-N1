@@ -1,0 +1,24 @@
+# docker-compose版本
+version: '3'
+# 服务
+services:
+# 服务名
+  n1-media:
+  # 镜像源地址
+    image: taoskycn/n1-media-server:latest
+    # 容器名
+    container_name: n1
+    # 环境内部设置
+    environment:
+    # 主机名
+      - hostname=n1
+      - name=n1
+    # 卷
+    volumes:
+    # 系统内文件:Docker内文件
+      - ./hass/config:/config
+      - ./hass/localtime:/etc/localtime:ro
+    # 系统内端口:docker内端口
+    ports:
+     - "8124:8123"
+    restart: always
