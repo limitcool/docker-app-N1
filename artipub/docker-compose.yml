@@ -15,7 +15,7 @@ services:
   mongo:
     image: mongo:latest
     restart: always
-    # volumes:
-      # - /docker-vou:/data/db
+    volumes:
+       - /mnt/disk/docker-volume/data/db:/data/db
     ports:
       - "27017:27017"
