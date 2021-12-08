@@ -7,11 +7,14 @@ services:
       - hostname=QL
       - name=QL
     volumes:
-      - ./disk/docker-volume/qinglong/config:/config
-      - ./disk/docker-volume/qinglong/log:/ql/log
-      - ./disk/docker-volume/qinglong/db:/ql/db
-      - ./disk/docker-volume/qinglong/scripts:/ql/scripts
-      - ./disk/docker-volume/qinglong/jbot:/ql/jbot
+      - /mnt/disk/docker-volume/qinglong/config:/config
+      - /mnt/disk/docker-volume/qinglong/log:/ql/log
+      - /mnt/disk/docker-volume/qinglong/db:/ql/db
+      - /mnt/disk/docker-volume/qinglong/scripts:/ql/scripts
+      - /mnt/disk/docker-volume/qinglong/jbot:/ql/jbot
+      - /mnt/disk/docker-volume/qinglong/raw:/ql/raw
+      - /mnt/disk/docker-volume/qinglong/repo:/ql/repo
+      - /mnt/disk/docker-volume/qinglong/oscript:/ql/oscript
     ports:
      - "5700:5700"
      - "5701:5701"

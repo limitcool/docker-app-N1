@@ -1,0 +1,9 @@
+version: "3"
+
+services:
+  webapp:
+    image: ironsmile/euterpe:latest
+    ports:
+      - "9996:9996"
+    volumes:
+      - "/mnt/disk/docker-volume/euterpe:/root/Music"

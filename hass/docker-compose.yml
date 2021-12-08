@@ -17,8 +17,8 @@ services:
     # 卷
     volumes:
     # 系统内文件:Docker内文件
-      - /disk/docker-volume/hass/config:/config
-      - /disk/docker-volume/hass/localtime:/etc/localtime:ro
+      - /mnt/disk/docker-volume/hass/config:/config
+      - /mnt/disk/docker-volume/hass/localtime:/etc/localtime:ro
     # 系统内端口:docker内端口
     ports:
      - "8123:8123"
