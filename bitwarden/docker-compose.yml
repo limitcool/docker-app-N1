@@ -6,9 +6,9 @@ services:
     container_name: bitwarden
     restart: always
     volumes:
-      - /disk/docker-volume/bitwarden/data:/data
+      - /mnt/disk/docker-volume/bitwarden/data:/data
     env_file:
-      - /disk/docker-volume/bitwarden/config.env
+      - /mnt/disk/docker-volume/bitwarden/config.env
     ports:
       - "8880:80"
       - "3012:3012"
