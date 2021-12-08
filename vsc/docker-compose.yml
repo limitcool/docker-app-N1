@@ -17,7 +17,7 @@ services:
     networks:
       - vscs
     volumes:
-     #- /disk/docker-volume/vsc/.config:/disk/coder/.config
-      - /disk/docker-volume/vsc/project:/disk/coder/project
+      - /mnt/disk/docker-volume/vsc/.config:/disk/coder/.config
+      - /mnt/disk/docker-volume/vsc/project:/disk/coder/project
     ports:
       - "9780:8080"

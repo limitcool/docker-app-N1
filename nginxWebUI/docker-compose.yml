@@ -1,10 +1,10 @@
 version: "3"
 services:
   nginxWebUi-server:
-    image: cym1102/nginxwebui:2.5.8
+    image: cym1102/nginxwebui:latest
     container_name: nginxwebui
     volumes:
-      - /disk/docker-volume/nginxWebUI:/disk/nginxWebUI
+      - /mnt/disk/docker-volume/nginxWebUI:/disk/nginxWebUI
     environment:
       - hostname=nginxwebui
       - name=nginxwebui
