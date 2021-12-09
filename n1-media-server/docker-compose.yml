@@ -13,13 +13,16 @@ services:
     # 主机名
       - hostname=n1
       - name=n1
+    stdin_open: true
+    tty: true
     # 卷
     volumes:
     # 系统内文件:Docker内文件
       - /mnt/disk/docker-volume/n1-media/exmedia:/media/exmedia
     # 系统内端口:docker内端口
     ports:
-    #  - "1001-1006:1001-1006"
+     - "1001-1006:1001-1006"
      - "51413:51413"
      - "548:548"
-    restart: always
+    restart: unless-stopped
+    
